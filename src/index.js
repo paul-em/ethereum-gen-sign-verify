@@ -6,7 +6,7 @@ exports.generateKeyPair = function generateKeyPair() {
   return {
     privateKey: wallet.getPrivateKeyString(),
     publicKey: wallet.getPublicKeyString(),
-    address: wallet.getAddressString(),
+    address: wallet.getAddressString()
   };
 };
 
@@ -16,7 +16,7 @@ exports.sign = function sign(data, privateKey) {
   return {
     r: ethUtil.bufferToHex(sig.r),
     s: ethUtil.bufferToHex(sig.s),
-    v: sig.v,
+    v: sig.v
   };
 };
 
