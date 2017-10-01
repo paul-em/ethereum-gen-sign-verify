@@ -20,7 +20,7 @@ function sign(data, privateKey) {
   };
 }
 
-function verifySignature(data, signature, address) {
+function verify(data, signature, address) {
   const msgHash = ethUtil.rlphash(data);
   const r = ethUtil.toBuffer(signature.r);
   const s = ethUtil.toBuffer(signature.s);
@@ -33,5 +33,5 @@ function verifySignature(data, signature, address) {
 module.exports = {
   generateKeyPair,
   sign,
-  verifySignature,
+  verify,
 };

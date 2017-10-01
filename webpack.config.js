@@ -11,7 +11,7 @@ module.exports = [
     output: {
       filename: `.${path.sep}lib.js`,
       path: DIST_DIR,
-      library: 'ethGen',
+      library: 'ethGSV',
       libraryTarget: 'umd'
     },
     module: {
