@@ -1,0 +1,33 @@
+{
+  "name": "ethereum-gen-sign-verify",
+  "version": "1.0.0",
+  "description": "",
+  "main": "src/index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "webpack -p",
+    "watch": "webpack --watch",
+    "postinstall": "npm run build"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "ethereumjs-util": "^5.1.2",
+    "ethereumjs-wallet": "^0.6.0",
+    "expect.js": "^0.3.1"
+  },
+  "devDependencies": {
+    "babel-core": "^6.26.0",
+    "babel-loader": "^7.1.2",
+    "babel-preset-env": "^1.6.0",
+    "mocha": "^3.5.3",
+    "webpack": "^3.6.0"
+  },
+  "babel": {
+    "presets": [
+      [
+        "env"
+      ]
+    ]
+  }
+}
