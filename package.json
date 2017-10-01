@@ -17,17 +17,7 @@
     "expect.js": "^0.3.1"
   },
   "devDependencies": {
-    "babel-core": "^6.26.0",
-    "babel-loader": "^7.1.2",
-    "babel-preset-env": "^1.6.0",
     "mocha": "^3.5.3",
     "webpack": "^3.6.0"
-  },
-  "babel": {
-    "presets": [
-      [
-        "env"
-      ]
-    ]
   }
 }

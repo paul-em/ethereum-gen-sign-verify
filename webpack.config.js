@@ -6,22 +6,13 @@ const DIST_DIR = path.resolve(__dirname, 'browser');
 module.exports = [
   {
     context: SRC_DIR,
-    entry: `.${path.sep}index.js`,
+    entry: '.' + path.sep + 'index.js',
     target: 'web',
     output: {
-      filename: `.${path.sep}lib.js`,
+      filename: '.' + path.sep + 'lib.js',
       path: DIST_DIR,
       library: 'ethGSV',
       libraryTarget: 'umd'
-    },
-    module: {
-      rules: [
-        {
-          test: /\.js$/,
-          loader: 'babel-loader',
-          exclude: /node_modules/,
-        },
-      ],
-    },
-  },
+    }
+  }
 ];

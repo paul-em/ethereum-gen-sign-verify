@@ -1,37 +1,31 @@
-const ethWallet = require('ethereumjs-wallet');
-const ethUtil = require('ethereumjs-util');
+var ethWallet = require('ethereumjs-wallet');
+var ethUtil = require('ethereumjs-util');
 
-function generateKeyPair() {
-  const wallet = ethWallet.generate();
+exports.generateKeyPair = function generateKeyPair() {
+  var wallet = ethWallet.generate();
   return {
     privateKey: wallet.getPrivateKeyString(),
     publicKey: wallet.getPublicKeyString(),
     address: wallet.getAddressString(),
   };
-}
+};
 
-function sign(data, privateKey) {
-  const msgHash = ethUtil.rlphash(data);
-  const sig = ethUtil.ecsign(msgHash, ethUtil.toBuffer(privateKey));
+exports.sign = function sign(data, privateKey) {
+  var msgHash = ethUtil.rlphash(data);
+  var sig = ethUtil.ecsign(msgHash, ethUtil.toBuffer(privateKey));
   return {
     r: ethUtil.bufferToHex(sig.r),
     s: ethUtil.bufferToHex(sig.s),
     v: sig.v,
   };
-}
+};
 
-function verify(data, signature, address) {
-  const msgHash = ethUtil.rlphash(data);
-  const r = ethUtil.toBuffer(signature.r);
-  const s = ethUtil.toBuffer(signature.s);
-  const v = signature.v;
-  const signedPublicKeyBuffer = ethUtil.ecrecover(msgHash, v, r, s);
-  const publicKey = ethUtil.bufferToHex(signedPublicKeyBuffer);
+exports.verify = function verify(data, signature, address) {
+  var msgHash = ethUtil.rlphash(data);
+  var r = ethUtil.toBuffer(signature.r);
+  var s = ethUtil.toBuffer(signature.s);
+  var v = signature.v;
+  var signedPublicKeyBuffer = ethUtil.ecrecover(msgHash, v, r, s);
+  var publicKey = ethUtil.bufferToHex(signedPublicKeyBuffer);
   return ethUtil.bufferToHex(ethUtil.pubToAddress(publicKey)) === address;
-}
-
-module.exports = {
-  generateKeyPair,
-  sign,
-  verify,
 };
