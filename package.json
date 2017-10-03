@@ -13,10 +13,10 @@
   "license": "ISC",
   "dependencies": {
     "ethereumjs-util": "^5.1.2",
-    "ethereumjs-wallet": "^0.6.0",
-    "expect.js": "^0.3.1"
+    "ethereumjs-wallet": "^0.6.0"
   },
   "devDependencies": {
+    "expect.js": "^0.3.1",
     "mocha": "^3.5.3",
     "webpack": "^3.6.0"
   }
