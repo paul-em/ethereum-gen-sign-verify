@@ -9,7 +9,7 @@ Working in nodejs and in the browser. That's all.
 ## Install
 
 ```
-npn install ethereum-gen-sign-verify
+npm install ethereum-gen-sign-verify
 ```
 
 ### Docs for usage in the browser
